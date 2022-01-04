@@ -1,7 +1,13 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Birsan_Diana_Maria_lab_8.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<Birsan_Diana_Maria_lab_8Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Birsan_Diana_Maria_lab_8Context")));
 
 var app = builder.Build();
 
