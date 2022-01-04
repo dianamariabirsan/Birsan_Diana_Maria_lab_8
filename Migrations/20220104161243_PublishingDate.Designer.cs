@@ -4,6 +4,7 @@ using Birsan_Diana_Maria_lab_8.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Birsan_Diana_Maria_lab_8.Migrations
 {
     [DbContext(typeof(Birsan_Diana_Maria_lab_8Context))]
-    partial class Birsan_Diana_Maria_lab_8ContextModelSnapshot : ModelSnapshot
+    [Migration("20220104161243_PublishingDate")]
+    partial class PublishingDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

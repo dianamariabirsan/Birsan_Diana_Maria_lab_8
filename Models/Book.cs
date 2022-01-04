@@ -1,13 +1,21 @@
-﻿namespace Birsan_Diana_Maria_lab_8.Models
+﻿using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Birsan_Diana_Maria_lab_8.Models
 {
     public class Book
     {
         public int ID { get; set; }
+
+        [Display(Name = "Book Title")] 
         public string Title { get; set; }
         public string Author { get; set; }
-        public decimal Price
-        {
-            get; set;
-        }
+
+        [Column(TypeName = "decimal(6,2)")]
+        public decimal Price { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime PublishingDate { get; set; }
     }
 }
