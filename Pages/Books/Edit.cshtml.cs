@@ -12,7 +12,7 @@ using Birsan_Diana_Maria_lab_8.Models;
 
 namespace Birsan_Diana_Maria_lab_8.Pages.Books
 {
-    public class EditModel : PageModel
+    public class EditModel : BookCategoriesPageModel
     {
         private readonly Birsan_Diana_Maria_lab_8.Data.Birsan_Diana_Maria_lab_8Context _context;
 
@@ -77,3 +77,4 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
         }
     }
 }
+
