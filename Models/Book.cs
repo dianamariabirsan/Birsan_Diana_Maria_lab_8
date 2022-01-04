@@ -19,5 +19,6 @@ namespace Birsan_Diana_Maria_lab_8.Models
         public DateTime PublishingDate { get; set; }
         public int PublisherID { get; set; }
         public Publisher Publisher { get; set; }  //navigtion property
+        public ICollection<BookCategory> BookCategories { get; set; }
     }
 }

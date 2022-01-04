@@ -18,5 +18,7 @@ namespace Birsan_Diana_Maria_lab_8.Data
         public DbSet<Birsan_Diana_Maria_lab_8.Models.Book> Book { get; set; }
 
         public DbSet<Birsan_Diana_Maria_lab_8.Models.Publisher> Publisher { get; set; }
+
+        public DbSet<Birsan_Diana_Maria_lab_8.Models.Category> Category { get; set; }
     }
 }

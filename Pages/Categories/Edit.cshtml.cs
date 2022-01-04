@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Birsan_Diana_Maria_lab_8.Data;
 using Birsan_Diana_Maria_lab_8.Models;
 
-namespace Birsan_Diana_Maria_lab_8.Pages.Books
+namespace Birsan_Diana_Maria_lab_8.Pages.Categories
 {
     public class EditModel : PageModel
     {
@@ -22,7 +22,7 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public Category Category { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,13 +31,12 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
                 return NotFound();
             }
 
-            Book = await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
+            Category = await _context.Category.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Book == null)
+            if (Category == null)
             {
                 return NotFound();
             }
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
 
@@ -50,7 +49,7 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
                 return Page();
             }
 
-            _context.Attach(Book).State = EntityState.Modified;
+            _context.Attach(Category).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +57,7 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BookExists(Book.ID))
+                if (!CategoryExists(Category.ID))
                 {
                     return NotFound();
                 }
@@ -71,9 +70,9 @@ namespace Birsan_Diana_Maria_lab_8.Pages.Books
             return RedirectToPage("./Index");
         }
 
-        private bool BookExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.Book.Any(e => e.ID == id);
+            return _context.Category.Any(e => e.ID == id);
         }
     }
 }
