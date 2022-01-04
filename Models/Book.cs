@@ -17,5 +17,7 @@ namespace Birsan_Diana_Maria_lab_8.Models
 
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
+        public int PublisherID { get; set; }
+        public Publisher Publisher { get; set; }  //navigtion property
     }
 }
